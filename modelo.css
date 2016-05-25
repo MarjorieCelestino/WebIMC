@@ -1,1 +1,44 @@
-@CHARSET "ISO-8859-1";
+@CHARSET "UTF-8";
+body{
+	margin-bottom: 20px;
+	text-align:center;
+}
+
+h1{
+	text-align:center;
+	font-variant: small-caps;
+	font-size:65px;
+}
+
+
+p{
+	font-variant: small-caps;
+	font-size:20px
+}
+
+input{
+	width: 200px;
+	font-variant: small-caps;
+}
+
+button{
+	width: 150px;
+	height: 35px;
+	font-weight:bold;
+	background: #86b300;
+	color: #d9d9d9;
+	border-radius: 5px;
+}
+
+hr {
+	background: #99cc00;
+    height: 3px;
+}
+
+select{
+	width: 200px;
+}
+
+div{
+	background: #99cc00;
+}
