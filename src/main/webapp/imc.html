@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<meta charset="UTF-8">
+
+
 <title>IMC</title>
-<!--  Modelo css -->
-<link rel="stylesheet" type="text/css" href="modelo.css" />
+ <link rel="stylesheet" type="text/css" href="modelo.css" />
 </head>
 <div>
+
 <body>
-<br></br>
+
+
+<br><br>
 <h1>IMC</h1>
-<br></br>
+<br><br>
+
+<hr> 
 </div>
-<!-- Campos a serem preenchidos para o cálculo -->
-<p>Preencha os campos abaixo para calcular seu Índice de Massa Corporal</p>
 <br></br>
-<p>Peso:</p><input id="peso" type="text" placeholder="Peso">
+<p>Preencha os dados abaixo para calcular seu �ndice de Massa Corporal:</p>
+
 <br></br>
-<p>Altura:</p><input id="altura" type="text" placeholder="Altura">
+
+
+<p>Peso:</p> <input id = "peso" type="text" name="Peso" placeholder="Peso" >
+<br></br>
+<p>Altura:</p> <input id= "altura" type="text" name="Altura" placeholder="Altura" >
 <br></br>
 <p>Sexo:</p>
-<select>
-<option></option>
-<option>Feminino</option>
-<option>Masculino</option>
+<select id = "sexo">
+  <option></option>
+  <option>Feminino</option>
+  <option>Masculino</option>
 </select>
-<br></br>
-<!-- Calcula o IMC pela função do js-->
-<button onclick="myFunction()">Enviar</button>
-<!-- Referencia calculo.js -->
+<br></br><br></br>
+<button onclick="myFunction()" >Enviar</button>
+
+
 <script src="calculo.js" type="text/javascript"></script>
-<br></br>
+
 <hr>
 </body>
 </html>
