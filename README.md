@@ -10,4 +10,4 @@ Cálculo de IMC em JSP
 * Seja criativo. Utilize algum framework HTML5 para melhorar a experiência do usuário.
 * Crie um projeto Maven para fazer o exercício.
 * Utilize JSP (com HTML e CSS).
-* Informe o repositório no GitHub com o exercício.
+
