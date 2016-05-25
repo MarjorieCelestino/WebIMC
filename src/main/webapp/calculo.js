@@ -12,6 +12,8 @@ function myFunction() {
         	//Cálculo do imc
        		imc = peso / (altura * altura);
        		
+       		//verifica que os campos foram preenchidos
+       		if(peso !=0 && altura !=0){
        		//caso feminino e masculino
         	switch(sexo.selectedIndex){
         		case 1:
@@ -45,5 +47,6 @@ function myFunction() {
 					window.alert("Preencha todos campos corretamente!");
 				break;
 			}
+       		}else{window.alert("Preencha todos campos corretamente!");}
 }
 			
