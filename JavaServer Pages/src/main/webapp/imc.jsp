@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +10,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>IMC</title>
-<link rel="stylesheet" type="text/css" href="modelo.css" />
+ <link rel="stylesheet" type="text/css" href="modelo.css" />
 </head>
 <div>
 
@@ -24,7 +24,7 @@
 </div>
 <br></br>
 <!-- Recebe dados -->
-<p>Preencha os dados abaixo para calcular seu Índice de Massa Corporal:</p>
+<p>Preencha os dados abaixo para calcular seu �ndice de Massa Corporal:</p>
 
 <br></br>
 
@@ -36,55 +36,12 @@
 <p>Sexo:</p>
 <select id = "sexo">
   <option></option>
-  <option>Feminino</option>
-  <option>Masculino</option>
+  <option value = "fem">Feminino</option>
+  <option value = "mas">Masculino</option>
 </select>
 <br></br><br></br>
-<button onclick="myFunction()" >Enviar</button>
-<!-- Referencia JS -->
-<%
-float peso = document.getParameter("peso");
-float altura = document.getElementById("altura").value;
-int sexo = document.getElementById("sexo");
+<button onclick="calcula.jsp" >Enviar</button>
 
-
-    	//Cálculo do imc
-   		imc = peso / (altura * altura);
-   		if(peso !=0 && altura !=0){
-    	switch(sexo.selectedIndex){
-    		case 1:
-    		//Regras para mulher
-				if(imc <= 19.1){
-				window.alert("IMC = " + imc.toFixed(2) + "\nAbaixo do peso.");
-		        }else if(imc > 19.1 && imc <= 25.8){
-				window.alert("IMC = " + imc.toFixed(2) + "\nPeso normal.");
-				}else if(imc >= 25.8 && imc <= 27.3){
-				window.alert("IMC = " + imc.toFixed(2) + "\nMarginalmente acima do peso.");
-				}else if(imc >= 27.3 && imc <= 32.3){
-				window.alert("IMC = " + imc.toFixed(2) + "\nAcima do peso ideal.");
-				}else if(imc > 32.3 ){
-				window.alert("IMC = " + imc.toFixed(2) + "\nObeso.");}
-				
-			break;
-			case 2:
-				//Regras para homem
-		        if(imc <= 20.7){
-				window.alert("IMC = " + imc.toFixed(2) + "\nAbaixo do peso.");
-		        }else if(imc > 20.7 && imc <= 26.4){
-				window.alert("IMC = " + imc.toFixed(2) + "\nPeso normal.");
-				}else if(imc >= 26.4 && imc <= 27.8){
-				window.alert("IMC = " + imc.toFixed(2) + "\nMarginalmente acima do peso.");
-				}else if(imc >= 27.8 && imc <= 31.1){
-				window.alert("IMC = " + imc.toFixed(2) + "\nAcima do peso ideal.");
-				}else if(imc > 31.1 ){
-				window.alert("IMC = " + imc.toFixed(2) + "\nObeso.");}
-			break;
-			default:
-				window.alert("Preencha todos campos corretamente!");
-			break;
-		}
-	}else{window.alert("Preencha todos campos corretamente!");}
-%>
 
 <hr>
 </body>
