@@ -8,6 +8,7 @@
 </head>
 <body>
 <%
+	
     float peso = 0;
 	float altura = 0;
 	java.util.Formatter formatter = new java.util.Formatter();
