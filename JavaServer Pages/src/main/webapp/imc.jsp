@@ -40,9 +40,59 @@
   <option value = "mas">Masculino</option>
 </select>
 <br></br><br></br>
-<button onclick="calcula.jsp" >Enviar</button>
+<%
+	float peso = 0;
+	float altura = 0;
+	java.util.Formatter formatter = new java.util.Formatter();
+	String resultado = "";
 
+		//Recebe valores de peso e altura
+		String p = request.getParameter("peso");
+		String a = request.getParameter("altura");
+		String sexo = request.getParameter("sexo");
+		//trasforma em float
+		peso = Float.valueOf(p).floatValue();
+		altura = Float.valueOf(a).floatValue();
+    	//Cálculo do imc
+   		float imc = peso / (altura * altura);
+   		if(peso !=0 && altura !=0){
+    	switch(sexo){
+    		case "fem":
+    		//Regras para mulher
+				if(imc <= 19.1){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nAbaixo do peso.";
+		        }else if(imc > 19.1 && imc <= 25.8){
+		        	resultado = "IMC = " + formatter.format("%.2f", imc) + "\nPeso normal.";
+				}else if(imc >= 25.8 && imc <= 27.3){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nMarginalmente acima do peso.";
+				}else if(imc >= 27.3 && imc <= 32.3){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nAcima do peso ideal.";
+				}else if(imc > 32.3 ){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nObeso.";}
+				
+			break;
+			case "mas":
+				//Regras para homem
+		        if(imc <= 20.7){
+		        	resultado = "IMC = " + formatter.format("%.2f", imc) + "\nAbaixo do peso.";
+		        }else if(imc > 20.7 && imc <= 26.4){
+		        	resultado = "IMC = " + formatter.format("%.2f", imc) + "\nPeso normal.";
+				}else if(imc >= 26.4 && imc <= 27.8){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nMarginalmente acima do peso.";
+				}else if(imc >= 27.8 && imc <= 31.1){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nAcima do peso ideal.";
+				}else if(imc > 31.1 ){
+					resultado = "IMC = " + formatter.format("%.2f", imc) + "\nObeso.";}
+			break;
+			default:
+				resultado = "Preencha todos campos corretamente!";
+			break;
+		}
+	}else{resultado = "Preencha todos campos corretamente!";}
 
+   		
+%>
+<button <%=resultado %> >Enviar</button>
 <hr>
 </body>
 </html>
