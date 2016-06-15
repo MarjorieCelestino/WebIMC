@@ -1,4 +1,4 @@
-package imc.br.com.imc;
+package com.imcMVC.imcMVC;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
